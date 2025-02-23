@@ -22,3 +22,22 @@ Interacción con enemigos (vacas):
 
 Se han añadido enemigos estáticos (vacas) que permanecen en su lugar hasta que el jugador entra en un radio de 3 unidades de distancia.
 Al detectarlo, empiezan a perseguirlo con la intención de expulsarlo de la pantalla.
+
+
+
+
+
+
+
+
+
+EL SCRIPT PLAYER1 HACE LO SIG:
+
+movSpeed es una variable pública que determina la velocidad de movimiento del personaje. 
+speedX y speedY almacenan la velocidad en los ejes X e Y respectivamente.
+rb es una referencia al componente Rigidbody2D del personaje, que se usa para aplicar el movimiento.
+En el método Start(), que se ejecuta al inicio del juego, se obtiene el Rigidbody2D del objeto y se almacena en rb.
+
+En el método FixedUpdate(), que se ejecuta a intervalos regulares para cálculos físicos, se obtiene la entrada del jugador a través de Input.GetAxisRaw("Horizontal") y Input.GetAxisRaw("Vertical"). Estos valores indican la dirección en la que el jugador quiere moverse (izquierda, derecha, arriba o abajo). Luego, se multiplican por movSpeed para determinar la velocidad final en cada eje.
+
+Finalmente, se asigna esta velocidad a rb.velocity, lo que provoca el desplazamiento del personaje en la dirección deseada dentro del juego.
