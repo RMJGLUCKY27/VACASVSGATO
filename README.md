@@ -41,3 +41,39 @@ En el método Start(), que se ejecuta al inicio del juego, se obtiene el Rigidbo
 En el método FixedUpdate(), que se ejecuta a intervalos regulares para cálculos físicos, se obtiene la entrada del jugador a través de Input.GetAxisRaw("Horizontal") y Input.GetAxisRaw("Vertical"). Estos valores indican la dirección en la que el jugador quiere moverse (izquierda, derecha, arriba o abajo). Luego, se multiplican por movSpeed para determinar la velocidad final en cada eje.
 
 Finalmente, se asigna esta velocidad a rb.velocity, lo que provoca el desplazamiento del personaje en la dirección deseada dentro del juego.
+
+
+
+
+
+
+
+
+
+
+EL SCRIPT DE ENEMY HACE:
+Variables principales
+
+jugador: almacena la referencia al objeto del jugador en la escena.
+radioDeteccion: define la distancia dentro de la cual el enemigo detectará al jugador.
+velocidad: determina la rapidez con la que el enemigo se moverá hacia el jugador.
+persiguiendo: indica si el enemigo ha detectado al jugador y debe comenzar a seguirlo.
+Método Start()
+
+Busca un objeto llamado "PLAYER" en la escena y almacena su Transform en jugador.
+Si el objeto no se encuentra, se muestra un mensaje de error en la consola.
+Método Update()
+
+Si el jugador no ha sido encontrado, el código termina (return).
+Calcula la distancia entre el enemigo y el jugador con Vector3.Distance().
+Si el jugador está dentro del radioDeteccion, se activa la persecución.
+Si el enemigo está en modo persecución (persiguiendo = true), se mueve hacia la posición del jugador usando Vector3.MoveTowards().
+Método RecibirDaño()
+
+Se ejecuta cuando el enemigo recibe un ataque.
+Muestra un mensaje en la consola indicando que el enemigo ha sido atacado.
+Usa Destroy(gameObject) para eliminar el enemigo de la escena.
+Método OnTriggerEnter(Collider other)
+
+Se ejecuta cuando otro objeto entra en contacto con el enemigo.
+Si el objeto tiene la etiqueta "AtaqueJugador", el enemigo recibe daño y se destruye.
