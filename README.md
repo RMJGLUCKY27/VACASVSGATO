@@ -16,6 +16,8 @@ Movimiento del personaje:
 
 El jugador controla un gato que se desplaza arriba, abajo, izquierda y derecha con las teclas WASD o flechas del teclado.
 Su sprite cambia dependiendo de la última dirección en la que se movió.(   NO SE PUDIERON HACER :(   )
+
+
 Interacción con enemigos (vacas):
 
 Se han añadido enemigos estáticos (vacas) que permanecen en su lugar hasta que el jugador entra en un radio de 3 unidades de distancia.
